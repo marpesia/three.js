@@ -1,2 +1,2 @@
-# tree.js
+# three.js
 Three.js test rep
