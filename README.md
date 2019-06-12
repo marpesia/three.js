@@ -7,3 +7,7 @@ Configuración de exportación por defecto
 
 #### Three.js
 - Crear un tag `<canvas>` en el HTML. Si no lo crea ThreeJS por defecto pero luego puede dar problemas.
+
+#### Documentación
+[https://threejs.org/ link](https://threejs.org/)
+[https://threejsfundamentals.org/ link](https://threejsfundamentals.org/)
