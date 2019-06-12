@@ -15,23 +15,43 @@
       width: 100vw;
       height: 100vh;
     }
+    #lights{
+      font-size: 1rem;
+      color: #fff;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      background-color: #000;
+      border: 1px solid;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
   <canvas id="c"></canvas>
+  <div id='lights'>
+    <label for='lightsCheckbox'>Lights On</label>
+    <input type='checkbox' name='lightsCheckbox' id='lightsCheckbox' onclick="toys.actions()" />
+  </div>
   <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/three.min.js"></script>
 
   <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/controls/OrbitControls.js"></script>
 
+  <!-- object loader -->
   <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/LoaderSupport.js"></script>
   <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/OBJLoader2.js"></script>
   <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/MTLLoader.js"></script>
+  <!-- object loader -->
 
-  <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/GLTFLoader.js"></script>
-
+  <!-- light helpers -->
   <script src="https://threejsfundamentals.org/threejs/../3rdparty/dat.gui.min.js"></script>
+  <script src="light_helpers.js"></script>
+  <!-- light helpers -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <!--
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script> -->
 
   <script src="toys.js"></script>
 </body>
