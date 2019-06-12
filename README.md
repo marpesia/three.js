@@ -11,4 +11,4 @@ Configuración de exportación por defecto
 #### Documentación
 https://threejs.org/
 
-https://threejs.org/
+https://threejsfundamentals.org/
