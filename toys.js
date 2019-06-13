@@ -35,6 +35,40 @@ const toys = {
     // Creamos la escena donde se va a renderizar todo
     this.scene = new THREE.Scene();
   },
+  renderScene: function() {
+    const renderer = this.renderer
+    const camera = this.camera
+    const scene = this.scene
+
+    // actualizamos el render con respecto al navegador
+    function resizeRendererToDisplaySize(renderer) {
+      const canvas = renderer.domElement;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const needResize = canvas.width !== width || canvas.height !== height;
+      if (needResize) {
+        renderer.setSize(width, height, false);
+      }
+      return needResize;
+    }
+
+    // refresco de render
+    function render() {
+
+      if (resizeRendererToDisplaySize(renderer)) {
+        const canvas = renderer.domElement;
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+      }
+
+      renderer.render(scene, camera);
+
+      // se utiliza para indicar al navegador que queremos animal algo
+      requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+  },  
   ambient: function() {
     // color de fondo
     this.scene.background = new THREE.Color('black');
@@ -49,6 +83,7 @@ const toys = {
     //suelo
     const planeSize = 40;
 
+    // textura suelo
     const loader = new THREE.TextureLoader();
     const texture = loader.load('https://threejsfundamentals.org/threejs/resources/images/checker.png');
     texture.wrapS = THREE.RepeatWrapping;
@@ -57,11 +92,14 @@ const toys = {
     const repeats = planeSize / 2;
     texture.repeat.set(repeats, repeats);
 
+    // geometría del suelo
     const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
+    // material del suelo
     const planeMat = new THREE.MeshPhongMaterial({
       map: texture,
       side: THREE.DoubleSide,
     });
+    // malla del suelo
     const mesh = new THREE.Mesh(planeGeo, planeMat);
     mesh.rotation.x = Math.PI * -.5;
     this.scene.add(mesh);
@@ -176,40 +214,6 @@ const toys = {
     updateLight();
 
     // helperLights(headlights1, updateLight());
-  },
-  renderScene: function() {
-    const renderer = this.renderer
-    const camera = this.camera
-    const scene = this.scene
-
-    // actualizamos el render con respecto al navegador
-    function resizeRendererToDisplaySize(renderer) {
-      const canvas = renderer.domElement;
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
-      const needResize = canvas.width !== width || canvas.height !== height;
-      if (needResize) {
-        renderer.setSize(width, height, false);
-      }
-      return needResize;
-    }
-
-    // refresco de render
-    function render() {
-
-      if (resizeRendererToDisplaySize(renderer)) {
-        const canvas = renderer.domElement;
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
-      }
-
-      renderer.render(scene, camera);
-
-      // se utiliza para indicar al navegador que queremos animal algo
-      requestAnimationFrame(render);
-    }
-
-    requestAnimationFrame(render);
   },
   deleteObj(name) {
     let selectedObj = this.scene.getObjectByName(name);
