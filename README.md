@@ -5,15 +5,15 @@
 
 ## Parte 1 - BLENDER
 
-1- Instalar Blender 2.79 [Descargar](https://www.blender.org/download/) + Crear archivo + Preferencias
-2- Interfaz (zonas de interaccion) + Funciones (colapsar ventanas, vistas) + vista camara
-3- Cubo y modificadores (escalar, mover, girar, ...)
-4- Añadir objetos
-5- Modelar juguete = edit mode + extruir + inset + faces, vertex, booleanos, ...
-6- Materiales básico
-7- Iluminación básica
-8- Render + cámara
-9- Exportar archivo (.obj)
+1. Instalar Blender 2.79 [Descargar](https://www.blender.org/download/) + Crear archivo + Preferencias
+2. Interfaz (zonas de interaccion) + Funciones (colapsar ventanas, vistas) + vista camara
+3. Cubo y modificadores (escalar, mover, girar, ...)
+4. Añadir objetos
+5. Modelar juguete = edit mode + extruir + inset + faces, vertex, booleanos, ...
+6. Materiales básico
+7. Iluminación básica
+8. Render + cámara
+9. Exportar archivo (.obj)
 
 ### Recursos Blender
 - [Atajos de teclado](https://www.giudansky.com/downloads/learnwithaposter/blender-poster-infographic/blender-infographic-SM-1280.png)
