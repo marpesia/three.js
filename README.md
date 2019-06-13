@@ -1,3 +1,5 @@
+![Blender & ThreeJS - Ampliando los horizontes](/toys-readme.png)
+
 # Three.js
 Blender & ThreeJS - Ampliando los horizontes
 
